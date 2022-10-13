@@ -1,0 +1,40 @@
+SELECT SUM('balance') AS "Total Salary"
+FROM bank_details
+
+select * from Bank_details
+SELECT SUM(balance) from bank_details
+
+select * , min(balance) from bank_details
+select * from bank_details order by balance limit 1
+select * from bank_details where balance in (select min(balance) from bank_details)
+select * from bank_details where balance = (select min(balance) minbalance from bank_details)
+//max balance 
+select max(balance) from bank_details
+select * from bank_details where balance in (select max(balance) from bank_details)
+select * from bank_details order by balance desc
+select * from bank_details order by balance desc limit 1 
+
+// try to prepare  a list of all person  who is having loan//
+
+select * from bank_details where loan = 'yes' 
+
+// try to find out avg balance of people whos job role is admin //
+select avg(balance) from bank_details where Job = 'Admin.'
+
+try to find out record without a job and whose age is below 45
+
+select * from bank_details where job = 'unknown' and age <=45
+
+try to find out record where education is primary and person is jobless
+
+select * from bank_details where education = 'primary' and job = 'unknown'
+
+try to find out record whose balance is -ve 
+
+select * from bank_details where balance < 0 
+
+try to find out record whose not having house at all along with there balance 
+select balance, housing from bank_details where Housing = 'no' 
+
+
+
